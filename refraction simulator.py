@@ -38,7 +38,6 @@ class RefractionSimulator:
         self.angle_entry.insert(0, "30.0")
         self.angle_entry.grid(row=1, column=1, padx=5, pady=5)
         self.angle_entry.bind('<Return>', self.angle_entry_update)
-        self.angle_entry.bind('<FocusOut>', self.angle_entry_update)
 
         self.update()
 
@@ -64,11 +63,6 @@ class RefractionSimulator:
         else:
             theta2_rad = math.asin(sin_theta2)
             theta2_deg = math.degrees(theta2_rad)
-
-        if theta2_deg is not None:
-            self.info_label.config(text=f"θ1 = {theta1_deg:.1f}°, θ2 = {theta2_deg:.1f}°")
-        else:
-            self.info_label.config(text=f"θ1 = {theta1_deg:.1f}°, 全反射！")
 
         self.draw(theta1_deg, theta2_deg)
 
