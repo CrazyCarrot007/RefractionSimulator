@@ -23,7 +23,7 @@ class RefractionSimulator:
         self.n2_entry.bind('<Return>', self.update)
 
         tk.Label(control, text="入射角 θ1 (°):").grid(row=0, column=2, padx=5)
-        self.slider = tk.Scale(control, from_=0, to=89, resolution=1,
+        self.slider = tk.Scale(control, from_=0, to=89, resolution=0.1,
                                orient=tk.HORIZONTAL, length=200, command=self.update)
         self.slider.set(30)
         self.slider.grid(row=0, column=3, padx=5)
