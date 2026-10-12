@@ -1,3 +1,4 @@
+
 import tkinter as tk
 import math
 
@@ -131,7 +132,8 @@ class RefractionSimulator:
                 py = cy - arc_r * math.sin(rad)  # 注意：屏幕 y 轴向下，所以向上是负号
                 points1.extend([px, py])
             self.canvas.create_line(points1, fill='blue', width=2,smooth=True)
-            # 用tkinter自带的贝塞尔曲线算法（Bezier curve，smooth=True），自动把20个点连接成一条极其平滑的弧线，避免了一般方法通过无限拉高steps而浪费电脑算力的问题
+            '''用tkinter自带的贝塞尔曲线算法（Bezier curve，smooth=True），自动把20个点连接成一条极其平滑的弧线，
+            避免了一般方法通过无限拉高steps而浪费电脑算力的问题'''
 
             # 2. 画折射角圆弧（红色，在右下方）
             points2 = []
@@ -175,3 +177,4 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = RefractionSimulator(root)
     root.mainloop()
+
