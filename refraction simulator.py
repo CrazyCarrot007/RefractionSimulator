@@ -83,8 +83,12 @@ class RefractionSimulator:
     def draw(self, theta1_deg, theta2_deg):
         self.canvas.delete("all")
 
-        w = self.canvas.winfo_width() if self.canvas.winfo_width() > 1 else 700
-        h = self.canvas.winfo_height() if self.canvas.winfo_height() > 1 else 500
+       w = self.canvas.winfo_width()
+        if w <= 1:
+            w = 700
+        h = self.canvas.winfo_height()
+        if h <= 1:
+            w = 500
 
         # ---- 竖直黑线（介质与空气的交界） ----
         x_line = w // 2
